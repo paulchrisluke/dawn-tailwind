@@ -60,6 +60,11 @@
         "button_label": "Load more"
       }
     },
+    "1661401041cd8a412b": {
+      "type": "scrolling-banner",
+      "settings": {
+      }
+    },
     "featured_products": {
       "type": "featured-collection",
       "settings": {
@@ -118,7 +123,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/widget.gif",
-        "bg_color": "#fff",
+        "bg_color": "#ffffff",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -239,7 +244,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/fart-tile.gif-white_b4e50482-4bc4-4431-a078-631257bd4c2d.gif",
-        "bg_color": "#fff",
+        "bg_color": "#ffffff",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -345,7 +350,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/infographic_2000x2000-web.jpg",
-        "bg_color": "#fff",
+        "bg_color": "#ffffff",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -536,6 +541,7 @@
   "order": [
     "image_banner",
     "1660760840b614851d",
+    "1661401041cd8a412b",
     "featured_products",
     "1660758993f3d6b9e6",
     "16607588025304ad07",
