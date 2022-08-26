@@ -116,7 +116,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__menu-item {
-  padding: 2.2rem 0;
+  padding: 2.2rem 1rem;
   text-decoration: none;
   font-size: 1.8rem;
 }
@@ -144,6 +144,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 .menu-drawer__menu-item--active,
 .menu-drawer__menu-item:focus,
 .menu-drawer__close-button:focus,
+.menu-drawer__menu-item:hover,
 .menu-drawer__close-button:hover {
   color: rgb(var(--color-foreground));
   background-color: rgba(var(--color-foreground), 0.04);

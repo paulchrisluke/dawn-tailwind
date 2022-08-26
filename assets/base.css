@@ -1670,10 +1670,12 @@ input[type="checkbox"] {
 
 /* component-quantity */
 .quantity {
-  border: 0.1rem solid rgba(var(--color-base-text), 0.08);
+  border: 0.2rem solid black;
+  border-radius: 64px;
+  box-shadow: black 1px 1px 0 0;
   position: relative;
-  height: 4.5rem;
-  width: calc(14rem / var(--font-body-scale));
+  height: 3.5rem;
+  width: calc(12rem / var(--font-body-scale));
   display: flex;
 }
 

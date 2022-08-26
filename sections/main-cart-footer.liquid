@@ -3,13 +3,23 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 
-<div class="page-width{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
+<div
+  class="page-width{% if cart == empty %} is-empty{% endif %} xbg-[#FFF7EA] !xpb-10 !xpx-10"
+  id="main-cart-footer"
+  data-id="{{ section.id }}"
+>
   <div>
     <div class="cart__footer">
       {%- if section.settings.show_cart_note -%}
         <cart-note class="cart__note field">
           <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
-          <textarea class="text-area text-area--resize-vertical field__input" name="note" form="cart" id="Cart-note" placeholder="{{ 'sections.cart.note' | t }}">{{ cart.note }}</textarea>
+          <textarea
+            class="text-area text-area--resize-vertical field__input"
+            name="note"
+            form="cart"
+            id="Cart-note"
+            placeholder="{{ 'sections.cart.note' | t }}"
+          >{{ cart.note }}</textarea>
         </cart-note>
       {%- endif -%}
 
@@ -20,14 +30,22 @@
               {% render block %}
             {%- when 'subtotal' -%}
               <div class="js-contents" {{ block.shopify_attributes }}>
-                <div class="totals">
-                  <h3 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</h3>
-                  <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
+                <div class="totals xjustify-around sm:xjustify-center xmax-w-[360px] xmx-auto sm:xmax-w-none">
+                  <h3 class="totals__subtotal">
+                    {{ 'sections.cart.subtotal' | t | upcase }}
+                  </h3>
+                  <p class="totals__subtotal-value">
+                    {{ cart.total_price | money_with_currency }}
+                  </p>
                 </div>
 
                 <div>
                   {%- if cart.cart_level_discount_applications.size > 0 -%}
-                    <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                    <ul
+                      class="discounts list-unstyled"
+                      role="list"
+                      aria-label="{{ 'customer.order.discount' | t }}"
+                    >
                       {%- for discount in cart.cart_level_discount_applications -%}
                         <li class="discounts__discount discounts__discount--end">
                           {%- render 'icon-discount' -%}
@@ -41,11 +59,20 @@
 
                 <small class="tax-note caption-large rte">
                   {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
-                    {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                    {{
+                      'sections.cart.taxes_included_and_shipping_policy_html'
+                      | t: link: shop.shipping_policy.url
+                    }}
                   {%- elsif cart.taxes_included -%}
-                    {{ 'sections.cart.taxes_included_but_shipping_at_checkout' | t }}
+                    {{
+                      'sections.cart.taxes_included_but_shipping_at_checkout'
+                      | t
+                    }}
                   {%- elsif shop.shipping_policy.body != blank -%}
-                    {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                    {{
+                      'sections.cart.taxes_and_shipping_policy_at_checkout_html'
+                      | t: link: shop.shipping_policy.url
+                    }}
                   {%- else -%}
                     {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
                   {%- endif -%}
@@ -54,12 +81,25 @@
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <noscript>
-                  <button type="submit" class="cart__update-button button button--secondary" form="cart">
+                  <button
+                    type="submit"
+                    class="cart__update-button button button--secondary"
+                    form="cart"
+                  >
                     {{ 'sections.cart.update' | t }}
                   </button>
                 </noscript>
 
-                <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
+                <button
+                  type="submit"
+                  id="checkout"
+                  class="cart__checkout-button button"
+                  name="checkout"
+                  {% if cart == empty %}
+                    disabled
+                  {% endif %}
+                  form="cart"
+                >
                   {{ 'sections.cart.checkout' | t }}
                 </button>
               </div>

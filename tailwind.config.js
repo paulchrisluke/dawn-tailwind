@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         heading: "var(--font-heading-family)",
       },
+      screens: {
+        sm: "750px",
+      },
     },
   },
   plugins: [],
