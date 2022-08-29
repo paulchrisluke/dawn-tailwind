@@ -1,6 +1,5 @@
 .totals {
   display: flex;
-  align-items: flex-end;
   font-weight: 500;
 }
 
@@ -27,10 +26,4 @@
 
 .cart__ctas + .totals {
   margin-top: 2rem;
-}
-
-@media all and (min-width: 750px) {
-  .totals {
-    justify-content: flex-end;
-  }
 }
