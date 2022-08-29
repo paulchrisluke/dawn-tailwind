@@ -4,6 +4,15 @@
       "type": "custom-liquid",
       "disabled": true,
       "settings": {
+        "bg_color": "#31AF46",
+        "text_color": "#fff",
+        "scallop_border_top": true,
+        "scallop_border_bottom": true,
+        "position": 0,
+        "title": "Our Social Lookbook",
+        "text_border": true,
+        "caption": "Get Featured",
+        "button_label": "Load more"
       }
     },
     "cart-items": {
@@ -39,6 +48,7 @@
       "blocks": {
         "166076727314b8b445-0": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "We think you'll love these...",
             "heading_size": "h1"
@@ -55,6 +65,7 @@
     },
     "16607664930f4b7324": {
       "type": "featured-product",
+      "disabled": true,
       "blocks": {
         "166076649384801554-0": {
           "type": "text",
