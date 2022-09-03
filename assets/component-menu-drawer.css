@@ -35,18 +35,12 @@ menu-drawer > details[open] > summary::before {
   z-index: 3;
   right: 0;
   top: 100%;
-  width: 450px;
+  width: 100%;
   padding: 0;
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
   border-left: 0;
   background-color: rgb(var(--color-background));
   overflow-x: hidden;
-}
-
-@media screen and (max-width: 590px) {
-  .menu-drawer {
-    width: 350px;
-  }
 }
 
 .js .menu-drawer {

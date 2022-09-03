@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "bundler": {
+      "type": "bundle-builder"
+    }
+  },
+  "order": ["bundler"]
+}

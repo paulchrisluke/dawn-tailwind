@@ -1,5 +1,12 @@
 <table class="cart-items">
-  {%- assign featured_item = cart.items | last -%}
+  {%- comment -%}{%- assign stuff = collections.all.products | json -%}{%- endcomment -%}
+  {% liquid
+    assign min = 0
+    assign max = collections.all.products.size
+    assign diff = max | minus: min
+    assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min
+    assign featured_item = collections.all.products[randomNumber]
+  %}
   <thead>
     <tr>
       <th
@@ -21,7 +28,7 @@
       id="CartItem-{{ featured_item.index | plus: 1 }}"
     >
       <td class="cart-item__media">
-        {% if featured_item.image %}
+        {% if featured_item.images.size > 0 %}
           {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
           <a
             href="{{ featured_item.url }}"
@@ -32,44 +39,38 @@
           </a>
           <img
             class="cart-item__image"
-            src="{{ featured_item.image | img_url: '300x' }}"
-            alt="{{ featured_item.image.alt | escape }}"
+            src="{{ featured_item | img_url: 'master' }}"
+            alt="{{ featured_item.alt | escape }}"
             loading="lazy"
             width="150"
-            height="{{ 150 | divided_by: featured_item.image.aspect_ratio | ceil }}"
+            height="{{ 150 | divided_by: featured_item.aspect_ratio | ceil }}"
           >
         {% endif %}
       </td>
 
       <td class="cart-item__details">
         <a href="{{ featured_item.url }}" class="cart-item__name h4 break">
-          {{- featured_item.product.title | escape -}}
+          {{- featured_item.title | escape -}}
         </a>
 
-        {%- if featured_item.original_price != featured_item.final_price -%}
-          <div class="cart-item__discounted-prices">
-            <span class="visually-hidden">
-              {{ 'products.product.price.regular_price' | t }}
-            </span>
-            <s class="cart-item__old-price product-option">
-              {{- featured_item.original_price | money -}}
-            </s>
-            <span class="visually-hidden">
-              {{ 'products.product.price.sale_price' | t }}
-            </span>
-            <strong class="cart-item__final-price product-option">
-              {{ featured_item.final_price | money }}
-            </strong>
-          </div>
-        {%- else -%}
-          <div class="product-option">
-            {{ featured_item.original_price | money }}
+        <!-- ADD PRICE HERE -->
+        {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+          <div class="product__tax caption rte">
+            {%- if shop.taxes_included -%}
+              {{ 'products.product.include_taxes' | t }}
+            {%- endif -%}
+            {%- if shop.shipping_policy.body != blank -%}
+              {{
+                'products.product.shipping_policy_html'
+                | t: link: shop.shipping_policy.url
+              }}
+            {%- endif -%}
           </div>
         {%- endif -%}
 
-        {%- if featured_item.product.has_only_default_variant == false or featured_item.properties.size != 0 or featured_item.selling_plan_allocation != nil -%}
+        {%- if featured_item.has_only_default_variant == false or featured_item.properties.size != 0 or featured_item.selling_plan_allocation != nil -%}
           <dl>
-            {%- if featured_item.product.has_only_default_variant == false -%}
+            {%- if featured_item.has_only_default_variant == false -%}
               {%- for option in featured_item.options_with_values -%}
                 <div class="product-option">
                   <dt>{{ option.name }}:</dt>
