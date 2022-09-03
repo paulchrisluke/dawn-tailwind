@@ -728,16 +728,16 @@ video {
   height: 0.5rem;
 }
 
+.xh-screen {
+  height: 100vh;
+}
+
 .xh-\[498px\] {
   height: 498px;
 }
 
 .xh-\[2px\] {
   height: 2px;
-}
-
-.xh-screen {
-  height: 100vh;
 }
 
 .xw-full {
