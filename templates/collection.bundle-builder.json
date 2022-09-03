@@ -40,9 +40,5 @@
       }
     }
   },
-  "order": [
-    "banner",
-    "product-grid",
-    "16607641414f1e9643"
-  ]
+  "order": ["banner", "product-grid", "16607641414f1e9643"]
 }

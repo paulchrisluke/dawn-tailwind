@@ -1,0 +1,13 @@
+<div class="product-bundle__wrapper">
+  <div id="product-bundle__container">
+    <div id="product-bundle__preact"></div>
+  </div>
+</div>
+
+{{ 'utilities.js' | asset_url | script_tag }}
+{{ 'template-bundler.css' | asset_url | stylesheet_tag }}
+<script
+  type="module"
+  src="{{ 'template-bundler.js' | asset_url }}"
+>
+</script>
