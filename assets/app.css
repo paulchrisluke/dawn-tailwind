@@ -740,6 +740,10 @@ video {
   height: 2px;
 }
 
+.xh-32 {
+  height: 8rem;
+}
+
 .xw-full {
   width: 100%;
 }
@@ -1011,6 +1015,11 @@ video {
 .xbg-\[\#09C5EF\] {
   --tw-bg-opacity: 1;
   background-color: rgb(9 197 239 / var(--tw-bg-opacity));
+}
+
+.xbg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 
 .xbg-opacity-0 {
