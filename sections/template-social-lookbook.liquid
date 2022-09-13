@@ -24,7 +24,7 @@
     show_all:true
   }
 </script>
-<div class="page-width page-content">
+<div class="page-width page-content xmax-w-6xl">
   {%- render 'breadcrumbs' -%}
 </div>
 <!-- <div class="grid"> -->
@@ -32,11 +32,11 @@
   <div class="grid__item medium-up--three-quarters medium-up--push-one-eighth">
 -->
 
-<div class="social-lookbook-section">
+<div class="social-lookbook-section xpt-20">
   <h2>
-    <a href="/pages/our-social-lookbook-gumballpoodle"
-      >OUR SOCIAL LOOKBOOK #GUMBALLPOODLE</a
-    >
+    <a href="/pages/our-social-lookbook-gumballpoodle">
+      {{- page.title -}}
+    </a>
   </h2>
 
   <div class="sub-title-wrapper">
@@ -129,7 +129,10 @@
 
           <div class="user-info">
             <div class="personal-info">
-              <a target="_blank" class="user-link" href=""
+              <a
+                target="_blank"
+                class="user-link"
+                href=""
                 ><img class="user-image"
               ></a>
               <span class="user-name"></span>
@@ -219,13 +222,7 @@
 {% schema %}
 {
   "name": "Social Lookbook",
-  "settings": [],
-  "presets": [
-    {
-      "name": "custom-lookbook",
-      "category": "Custom"
-    }
-  ]
+  "settings": []
 }
 {% endschema %}
 
