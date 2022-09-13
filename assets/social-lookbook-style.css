@@ -246,9 +246,8 @@ body.active-popup {
 .social-lookbook-galley {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
-  /**/
-  width: 1236px;
+  justify-content: center;
+  max-width: 1236px;
   margin: 0px auto;
 }
 
@@ -268,13 +267,13 @@ body.active-popup {
   padding: 11px;
 }
 
-.social-lookbook-galley .image-block-wrapper:first-child,
+/* .social-lookbook-galley .image-block-wrapper:first-child,
 .social-lookbook-galley .image-block-wrapper:nth-child(5n + 1) {
   margin-left: 0px;
 }
 .social-lookbook-galley .image-block-wrapper:nth-child(5n) {
   margin-right: 0px;
-}
+} */
 
 .social-lookbook-section .show-more {
   height: 24px;
@@ -308,7 +307,7 @@ body.active-popup {
   object-fit: cover;
   height: 100%;
   width: 100%;
-  z-index: 5;
+  /* z-index: 5; */
   position: relative;
   /**/
   border-radius: 20px;

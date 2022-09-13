@@ -232,9 +232,9 @@ function ugc_create_gallery_item(records) {
       //unmute video
       $slb_popup.querySelectorAll("video.content-main").forEach((item) => {
         item.addEventListener("volumechange", function () {
-          let mutted_status = this.muted;
+          let muted_status = this.muted;
           $slb_popup.querySelectorAll("video.content-main").forEach((item) => {
-            item.muted = mutted_status;
+            item.muted = muted_status;
           });
         });
       });
@@ -251,15 +251,18 @@ function ugc_create_gallery_item(records) {
     $new_gallery_item.style.background = slb_gallery_colors[index % 5];
 
     let element_to_delete;
-    if (item["its_video"]) {
-      $new_gallery_item
-        .querySelector("video")
-        .setAttribute("src", item["file"]);
-      element_to_delete = "img";
-    } else {
-      $new_gallery_item.querySelector("img").setAttribute("src", item["file"]);
-      element_to_delete = "video";
-    }
+    // ================================ UNCOMMENT OUT THIS SECTION TO RE-ADD VIDEOS ================================
+    // if (item["type"] !== "image") {
+    //   $new_gallery_item
+    //     .querySelector("video")
+    //     .setAttribute("src", item["content_url"]);
+    //   element_to_delete = "img";
+    // } else {
+    $new_gallery_item
+      .querySelector("img")
+      .setAttribute("src", item["thumbnail_url"]);
+    element_to_delete = "video";
+    // }
     //The block has video or image, so we delete unnecessary element
     element_to_delete = $new_gallery_item.querySelector(element_to_delete);
     element_to_delete.parentNode.removeChild(element_to_delete);
@@ -271,11 +274,12 @@ function ugc_create_gallery_item(records) {
 }
 
 /* Initial content loading */
-fetch("https://www.raccoonandduck.site/gumballpoodle/return.php")
+fetch("https://app.iloveugc.com/api/v1/feed/3")
   .then((response) => {
     return response.json();
   })
   .then((response) => {
+    let data = response.data;
     /* Hom many items should be shown */
     let how_many_show = 5;
 
@@ -284,26 +288,26 @@ fetch("https://www.raccoonandduck.site/gumballpoodle/return.php")
       document.querySelector(
         ".social-lookbook-section .show-more"
       ).style.display = "none";
-      how_many_show = response.length;
+      how_many_show = data.length;
     }
     /* END How many items should be shown */
 
-    ugc_all_data = response;
-    ugc_create_gallery_item(response.slice(0, how_many_show));
+    ugc_all_data = data;
+    ugc_create_gallery_item(data.slice(0, how_many_show));
 
     //Process returned data
-    response.forEach(function (item, index) {
+    data.forEach(function (item, index) {
       let $new_slide = $slb_popup_slide.cloneNode(true);
-      $new_slide.setAttribute("data-src", item["file"]);
+      $new_slide.setAttribute("data-src", item["content_id"]);
       $new_slide
         .querySelector(".buy-button")
         .setAttribute(
           "href",
-          item["product"] +
+          item["content_id"] +
             "?utm_source=iloveugc&utm_medium=buy-button&utm_campaign=home-widget"
         );
 
-      if (item["its_video"]) {
+      if (item["type"] !== "image") {
         $new_slide.classList.add("with-video");
         let item_for_delete = $new_slide.querySelector(
           ".image-block-wrapper img"
@@ -325,17 +329,16 @@ fetch("https://www.raccoonandduck.site/gumballpoodle/return.php")
         .querySelector(".user-link")
         .setAttribute(
           "href",
-          "https://www.instagram.com/" + item["content_creator"] + "/"
+          "https://www.instagram.com/" + item["username"] + "/"
         );
       $new_slide
         .querySelector(".user-image")
         .setAttribute("src", item["instagram_user_picture"]);
-      $new_slide.querySelector(".user-name").innerHTML =
-        item["content_creator"];
+      $new_slide.querySelector(".user-name").innerHTML = item["username"];
 
-      if (item["instagram_post_text"]) {
+      if (item["description"]) {
         $new_slide.querySelector(".user-info .text").innerHTML =
-          item["instagram_post_text"];
+          item["description"];
       }
 
       //Get data about connected products
