@@ -297,7 +297,7 @@ fetch("https://app.iloveugc.com/api/v1/feed/3")
     //Process returned data
     data.forEach(function (item, index) {
       let $new_slide = $slb_popup_slide.cloneNode(true);
-      $new_slide.setAttribute("data-src", item["content_id"]);
+      $new_slide.setAttribute("data-src", item["content_url"]);
       $new_slide
         .querySelector(".buy-button")
         .setAttribute(
