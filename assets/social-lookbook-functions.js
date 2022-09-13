@@ -251,18 +251,17 @@ function ugc_create_gallery_item(records) {
     $new_gallery_item.style.background = slb_gallery_colors[index % 5];
 
     let element_to_delete;
-    // ================================ UNCOMMENT OUT THIS SECTION TO RE-ADD VIDEOS ================================
-    // if (item["type"] !== "image") {
-    //   $new_gallery_item
-    //     .querySelector("video")
-    //     .setAttribute("src", item["content_url"]);
-    //   element_to_delete = "img";
-    // } else {
-    $new_gallery_item
-      .querySelector("img")
-      .setAttribute("src", item["thumbnail_url"]);
-    element_to_delete = "video";
-    // }
+    if (item["type"] !== "image") {
+      $new_gallery_item
+        .querySelector("video")
+        .setAttribute("src", item["content_url"]);
+      element_to_delete = "img";
+    } else {
+      $new_gallery_item
+        .querySelector("img")
+        .setAttribute("src", item["thumbnail_url"]);
+      element_to_delete = "video";
+    }
     //The block has video or image, so we delete unnecessary element
     element_to_delete = $new_gallery_item.querySelector(element_to_delete);
     element_to_delete.parentNode.removeChild(element_to_delete);
