@@ -122,6 +122,7 @@ function ProductList(props) {
                   alt="${product.title}"
                   data-product-id="${product.id}"
                   onClick=${(e) => {
+                    e.preventDefault();
                     props.addProductToBundle(e.currentTarget.dataset.productId);
                   }}
                 />

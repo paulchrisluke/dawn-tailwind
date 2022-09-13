@@ -1,0 +1,38 @@
+<div class="xmax-w-6xl xmx-auto">
+  <div class="xh-20 xbg-green-400 xtext-center xpy-4 xmy-4">
+    Social lookbook
+  </div>
+</div>
+
+<script>
+  let swiper = document.getElementById('swiper')
+  let data = fetch("https://app.iloveugc.com/api/v1/feed/3")
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => response.data )
+      .catch(e => { console.log('%csocial-lookbook-section.liquid line:8 e', 'color: #007acc;', e); })
+
+      if(data.length) {
+
+        data.forEach(item => {
+        let div = document.createElement('div');
+        div.classList.add('xw-20 xh-20')
+          let img = document.createElement()
+
+          swiper.appendChild(newItem)
+        });
+
+      }
+</script>
+
+{% schema %}
+{
+  "name": "Social Lookbook",
+  "presets": [
+    {
+      "name": "Social Lookbook"
+    }
+  ]
+}
+{% endschema %}
