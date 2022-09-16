@@ -15,7 +15,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "SHOP NEW STYLES",
-            "button_link_1": "shopify:\/\/collections\/new-products",
+            "button_link_1": "shopify://collections/new-products",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -23,15 +23,12 @@
           }
         }
       },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+      "block_order": ["heading", "button"],
       "settings": {
         "border": "",
         "scallop_border_top": false,
         "scallop_border_bottom": true,
-        "image": "shopify:\/\/shop_images\/banner.gif-yellow-2.gif",
+        "image": "shopify://shop_images/banner.gif-yellow-2.gif",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "adapt_height_first_image": false,
@@ -46,24 +43,13 @@
       }
     },
     "1660760840b614851d": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "settings": {
-        "bg_color": "#31af46",
-        "text_color": "#ffffff",
-        "scallop_border_top": true,
-        "scallop_border_bottom": true,
-        "position": 0,
-        "title": "Our Social Lookbook",
-        "text_border": true,
-        "caption": "Get Featured",
-        "button_label": "Load more"
-      }
+      "type": "social-lookbook-section",
+      "disabled": false,
+      "settings": {}
     },
     "1661401041cd8a412b": {
       "type": "scrolling-banner",
-      "settings": {
-      }
+      "settings": {}
     },
     "featured_products": {
       "type": "featured-collection",
@@ -103,7 +89,7 @@
         "166075899324c06463-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Join the GP team as an ambassador and we’ll set you up with a unique discount code to share with your friends, fam, followers and former lovers and earn <strong>10% commission <\/strong>on all orders placed using your code. Spread the love 💕 ...make some cash 💵 …Come join the Gumball Poodle Party 🧦 🎉 !<\/p>",
+            "text": "<p>Join the GP team as an ambassador and we’ll set you up with a unique discount code to share with your friends, fam, followers and former lovers and earn <strong>10% commission </strong>on all orders placed using your code. Spread the love 💕 ...make some cash 💵 …Come join the Gumball Poodle Party 🧦 🎉 !</p>",
             "text_style": "body"
           }
         },
@@ -111,7 +97,7 @@
           "type": "button",
           "settings": {
             "button_label": "LEARN HOW",
-            "button_link": "https:\/\/join.collabs.shopify.com\/community\/apply\/tLpoWnNrlFk"
+            "button_link": "https://join.collabs.shopify.com/community/apply/tLpoWnNrlFk"
           }
         }
       },
@@ -122,7 +108,7 @@
         "166075899324c06463-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/widget.gif",
+        "image": "shopify://shop_images/widget.gif",
         "bg_color": "#ffffff",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -140,12 +126,12 @@
         "1660758802f35cbbdf-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2desktop_full_2x_eca392bd-1509-4534-86f5-8fb99df5b914.png",
+            "image": "shopify://shop_images/2desktop_full_2x_eca392bd-1509-4534-86f5-8fb99df5b914.png",
             "heading": "",
             "heading_size": "medium",
             "subheading": "",
             "button_label": "CLICK",
-            "link": "shopify:\/\/collections\/knee-socks",
+            "link": "shopify://collections/knee-socks",
             "button_style_secondary": false,
             "box_align": "middle-center",
             "show_text_box": true,
@@ -156,9 +142,7 @@
           }
         }
       },
-      "block_order": [
-        "1660758802f35cbbdf-0"
-      ],
+      "block_order": ["1660758802f35cbbdf-0"],
       "settings": {
         "layout": "full_bleed",
         "scallop_border_top": true,
@@ -224,7 +208,7 @@
         "1660758909ce8ec6e8-1": {
           "type": "text",
           "settings": {
-            "text": "<p>SBD's, squeakers, quackers, rumblers, long ones, short ones, surprise ones, suppressed ones... whatever you call them, we've got you covered.<\/p>",
+            "text": "<p>SBD's, squeakers, quackers, rumblers, long ones, short ones, surprise ones, suppressed ones... whatever you call them, we've got you covered.</p>",
             "text_style": "body"
           }
         },
@@ -232,7 +216,7 @@
           "type": "button",
           "settings": {
             "button_label": "SHOP NOW",
-            "button_link": "shopify:\/\/collections\/butt-stuff"
+            "button_link": "shopify://collections/butt-stuff"
           }
         }
       },
@@ -243,7 +227,7 @@
         "1660758909ce8ec6e8-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/fart-tile.gif-white_b4e50482-4bc4-4431-a078-631257bd4c2d.gif",
+        "image": "shopify://shop_images/fart-tile.gif-white_b4e50482-4bc4-4431-a078-631257bd4c2d.gif",
         "bg_color": "#ffffff",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -261,12 +245,12 @@
         "166075892566c3d966-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/divine.gif",
+            "image": "shopify://shop_images/divine.gif",
             "heading": "",
             "heading_size": "medium",
             "subheading": "",
             "button_label": "CLICK",
-            "link": "shopify:\/\/collections\/divine",
+            "link": "shopify://collections/divine",
             "button_style_secondary": false,
             "box_align": "middle-center",
             "show_text_box": true,
@@ -277,9 +261,7 @@
           }
         }
       },
-      "block_order": [
-        "166075892566c3d966-0"
-      ],
+      "block_order": ["166075892566c3d966-0"],
       "settings": {
         "layout": "full_bleed",
         "scallop_border_top": false,
@@ -330,7 +312,7 @@
         "1660758718267bc75d-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Quality you can see and feel!<\/p>",
+            "text": "<p>Quality you can see and feel!</p>",
             "text_style": "body"
           }
         },
@@ -338,7 +320,7 @@
           "type": "button",
           "settings": {
             "button_label": "SHOP BEST SELLERS",
-            "button_link": "shopify:\/\/collections\/popular"
+            "button_link": "shopify://collections/popular"
           }
         }
       },
@@ -349,7 +331,7 @@
         "1660758718267bc75d-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/infographic_2000x2000-web.jpg",
+        "image": "shopify://shop_images/infographic_2000x2000-web.jpg",
         "bg_color": "#ffffff",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -365,14 +347,11 @@
       "type": "apps",
       "blocks": {
         "31c5e12d-f6bf-4555-83a4-1e31f6a5f2f2": {
-          "type": "shopify:\/\/apps\/personalized-recommendations\/blocks\/wiser_recent\/3f966edc-9a4a-465c-a4df-436d2a39160d",
-          "settings": {
-          }
+          "type": "shopify://apps/personalized-recommendations/blocks/wiser_recent/3f966edc-9a4a-465c-a4df-436d2a39160d",
+          "settings": {}
         }
       },
-      "block_order": [
-        "31c5e12d-f6bf-4555-83a4-1e31f6a5f2f2"
-      ],
+      "block_order": ["31c5e12d-f6bf-4555-83a4-1e31f6a5f2f2"],
       "settings": {
         "include_margins": true
       }
@@ -399,7 +378,7 @@
         "16607590664028530a-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Live_With_Kell_logo_gray_bg_2bc8b526-b245-43a9-b0a2-5b0b5855210f.png",
+            "image": "shopify://shop_images/Live_With_Kell_logo_gray_bg_2bc8b526-b245-43a9-b0a2-5b0b5855210f.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -409,7 +388,7 @@
         "16607590664028530a-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Stephen_Colbert_logo_gray_bg_bd38582d-5935-4556-90df-d18e92e3da8b.png",
+            "image": "shopify://shop_images/Stephen_Colbert_logo_gray_bg_bd38582d-5935-4556-90df-d18e92e3da8b.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -419,7 +398,7 @@
         "16607590664028530a-2": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/The_View_logo_white_bg.png",
+            "image": "shopify://shop_images/The_View_logo_white_bg.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -429,7 +408,7 @@
         "26aa5f65-69c6-480b-9905-5cf1365baf9e": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Wired_logo_white_bg.png",
+            "image": "shopify://shop_images/Wired_logo_white_bg.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -439,7 +418,7 @@
         "f934b3e7-d2af-4828-9f79-cf32b1e47ba8": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Daily_Mail_logo_gray_bg_f3e725d7-55b2-47d0-b3da-6bf80a59a036.png",
+            "image": "shopify://shop_images/Daily_Mail_logo_gray_bg_f3e725d7-55b2-47d0-b3da-6bf80a59a036.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -449,7 +428,7 @@
         "a5b8f81f-300b-4019-bc78-97d301a03503": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Bloomberg_logo_gray_bg_b5d0740f-1fda-4df1-94f9-16ec881ecca6.png",
+            "image": "shopify://shop_images/Bloomberg_logo_gray_bg_b5d0740f-1fda-4df1-94f9-16ec881ecca6.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -459,7 +438,7 @@
         "f932b63a-777a-403d-9960-e64345af7d06": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Marie_Claire_logo_gray_bg_1aca6521-7148-460c-abf6-05db6a81bdd5.png",
+            "image": "shopify://shop_images/Marie_Claire_logo_gray_bg_1aca6521-7148-460c-abf6-05db6a81bdd5.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -469,7 +448,7 @@
         "9fbd18df-df75-465d-889b-4a2766d00f4f": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Page_Six_logo_gray_bg_e0a2ec0a-dbe6-47f3-a625-88dd9b56901b.png",
+            "image": "shopify://shop_images/Page_Six_logo_gray_bg_e0a2ec0a-dbe6-47f3-a625-88dd9b56901b.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -479,7 +458,7 @@
         "c2c9ae96-ebe1-44b7-a892-9c5ac7a77277": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rachel_Maddow_logo_gray_bg_41139456-7e0d-4998-b508-5215e89e56dc.png",
+            "image": "shopify://shop_images/Rachel_Maddow_logo_gray_bg_41139456-7e0d-4998-b508-5215e89e56dc.png",
             "title": "",
             "text": "",
             "link_label": "",
@@ -489,7 +468,7 @@
         "eeda520a-1862-45ad-a102-a0f6caca776e": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Vogue_Italia_logo_gray_bg_650e6fc9-5ed7-4ef6-8048-3735fc0dd32a.png",
+            "image": "shopify://shop_images/Vogue_Italia_logo_gray_bg_650e6fc9-5ed7-4ef6-8048-3735fc0dd32a.png",
             "title": "",
             "text": "",
             "link_label": "",

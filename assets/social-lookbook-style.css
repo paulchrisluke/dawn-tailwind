@@ -267,6 +267,13 @@ body.active-popup {
   padding: 11px;
 }
 
+@media (max-width: 568px) {
+  .social-lookbook-galley .image-block-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 /* .social-lookbook-galley .image-block-wrapper:first-child,
 .social-lookbook-galley .image-block-wrapper:nth-child(5n + 1) {
   margin-left: 0px;

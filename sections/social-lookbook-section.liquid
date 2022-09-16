@@ -1,0 +1,75 @@
+<div class="xrelative xbg-[#31AF46] xpy-32 sm:xpy-64 xmy-10 sm:xmy-20 xpx-6">
+  <div class="xmax-w-[1200px] xmx-auto">
+    <h2 class="white-text-black-stroke h1 uppercase">
+      Our Social lookbook <br>
+      #Gumballpoodle
+    </h2>
+    <div class="xflex xspace-x-4 xpy-4">
+      <p class="xtext-white">Get featured</p>
+      {% render 'icon-question-mark' %}
+    </div>
+
+    <div
+      id="image-container"
+      class="xflex xflex-col sm:xflex-row sm:xjustify-center xitems-center sm:xspace-x-10 xmy-12 sm:xmy-20"
+    ></div>
+    <div class="xtext-center">
+      <a
+        href="{{ routes.root_url }}/pages/the-social-lookbook"
+        class="button"
+        >Load more</a
+      >
+    </div>
+
+    {% render 'border-scallop-top' %}
+    {% render 'border-scallop-bottom' %}
+  </div>
+</div>
+
+<script>
+  fetch("https://app.iloveugc.com/api/v1/feed/3")
+      .then(response => response.json())
+      .then(results => {
+        const feed = results.data;
+        if(feed.length) {
+          const imageContainer = document.getElementById('image-container')
+          feed.splice(0,5).forEach(item => {
+            imageContainer.appendChild(createImageCard(item))
+
+          });
+        }
+      })
+      .catch(e => console.log(e))
+
+      function createImageCard(item) {
+        let div = document.createElement('div')
+          let img = document.createElement('img')
+          let divChild = document.createElement('div')
+          div.classList.add('xrelative', 'xmax-w-[500px]', 'sm:xflex-1', 'xoverflow-hidden', 'xrounded-3xl', 'xbg-black', 'border', 'xmb-6', 'sm:xmb-0')
+          img.setAttribute('src', item.thumbnail_url)
+          img.classList.add('xobject-cover', 'xobject-center')
+          divChild.classList.add('xabsolute', 'xtop-0', 'xright-0', 'xpx-3', 'xpy-5')
+          divChild.innerHTML = `<span class="xbg-pink-600 xpx-3 xpy-1 xrounded-full xtext-semibold">${item.name}</span>`
+          div.appendChild(img)
+          div.appendChild(divChild)
+          return div;
+      }
+</script>
+
+<style>
+  .border {
+    border: 2px solid black;
+    box-shadow: black 3px 3px 0 0;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Social Lookbook",
+  "presets": [
+    {
+      "name": "Social Lookbook"
+    }
+  ]
+}
+{% endschema %}

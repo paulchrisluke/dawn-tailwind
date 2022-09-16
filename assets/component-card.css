@@ -41,7 +41,7 @@
 }
 
 .card--text-only::before {
-  content: '';
+  content: "";
   display: block;
   padding-bottom: 100%;
 }
@@ -52,10 +52,6 @@
 
 .card--stretch {
   height: 100%;
-}
-
-.card--outline:not(.card--soft) {
-  border: calc(0.1rem / var(--font-body-scale)) solid rgba(var(--color-foreground), 0.04);
 }
 
 .card--light-border {
@@ -223,9 +219,10 @@
 }
 
 .card-wrapper .full-unstyled-link:focus-visible::after {
-  outline: .2rem solid rgba(var(--color-foreground),.5);
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.3rem;
-  box-shadow: 0 0 0 .3rem rgb(var(--color-background)),0 0 .5rem .4rem rgba(var(--color-foreground),.3);
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 .card-wrapper:focus-within .card {

@@ -76,9 +76,11 @@
 
 .shopify-payment-button__button [role="button"].focused,
 .no-js .shopify-payment-button__button [role="button"]:focus {
-  outline: .2rem solid rgba(var(--color-foreground),.5) !important;
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.5) !important;
   outline-offset: 0.3rem;
-  box-shadow: 0 0 0 .1rem rgba(var(--color-button),var(--alpha-button-border)),0 0 0 .3rem rgb(var(--color-background)),0 0 .5rem .4rem rgba(var(--color-foreground),.3) !important;
+  box-shadow: 0 0 0 0.1rem rgba(var(--color-button), var(--alpha-button-border)),
+    0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3) !important;
 }
 
 .shopify-payment-button__button [role="button"]:focus:not(:focus-visible) {
@@ -87,8 +89,10 @@
 }
 
 .shopify-payment-button__button [role="button"]:focus-visible {
-  outline: .2rem solid rgba(var(--color-foreground),.5) !important;
-  box-shadow: 0 0 0 .1rem rgba(var(--color-button),var(--alpha-button-border)),0 0 0 .3rem rgb(var(--color-background)),0 0 .5rem .4rem rgba(var(--color-foreground),.3) !important;
+  outline: 0.2rem solid rgba(var(--color-foreground), 0.5) !important;
+  box-shadow: 0 0 0 0.1rem rgba(var(--color-button), var(--alpha-button-border)),
+    0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3) !important;
 }
 
 .shopify-payment-button__button--unbranded {
@@ -171,7 +175,7 @@ fieldset.product-form__input .form__label {
   margin-bottom: 0.2rem;
 }
 
-.product-form__input input[type='radio'] {
+.product-form__input input[type="radio"] {
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
   position: absolute;
@@ -179,7 +183,7 @@ fieldset.product-form__input .form__label {
   width: 1px;
 }
 
-.product-form__input input[type='radio'] + label {
+.product-form__input input[type="radio"] + label {
   border: 0.1rem solid rgba(var(--color-foreground), 0.55);
   border-radius: 4rem;
   color: rgb(var(--color-foreground));
@@ -194,44 +198,47 @@ fieldset.product-form__input .form__label {
   cursor: pointer;
 }
 
-.product-form__input input[type='radio'] + label:hover {
+.product-form__input input[type="radio"] + label:hover {
   border: 0.1rem solid rgb(var(--color-foreground));
 }
 
-.product-form__input input[type='radio']:checked + label {
+.product-form__input input[type="radio"]:checked + label {
   background-color: rgb(var(--color-foreground));
   color: rgb(var(--color-background));
 }
 
 @media screen and (forced-colors: active) {
-  .product-form__input input[type=radio]:checked + label {
+  .product-form__input input[type="radio"]:checked + label {
     text-decoration: underline;
   }
 }
 
-.product-form__input input[type='radio']:checked + label::selection {
+.product-form__input input[type="radio"]:checked + label::selection {
   background-color: rgba(var(--color-background), 0.3);
 }
 
-.product-form__input input[type='radio']:disabled + label {
+.product-form__input input[type="radio"]:disabled + label {
   border-color: rgba(var(--color-foreground), 0.1);
   color: rgba(var(--color-foreground), 0.4);
   text-decoration: line-through;
 }
-.product-form__input input[type='radio']:focus-visible + label {
+.product-form__input input[type="radio"]:focus-visible + label {
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
     0 0 0 0.5rem rgba(var(--color-foreground), 0.55);
 }
 
 /* Fallback */
-.product-form__input input[type='radio'].focused + label,
+.product-form__input input[type="radio"].focused + label,
 .no-js .shopify-payment-button__button [role="button"]:focus + label {
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
     0 0 0 0.5rem rgba(var(--color-foreground), 0.55);
 }
 
 /* No outline when focus-visible is available in the browser */
-.no-js .product-form__input input[type='radio']:focus:not(:focus-visible) + label {
+.no-js
+  .product-form__input
+  input[type="radio"]:focus:not(:focus-visible)
+  + label {
   box-shadow: none;
 }
 
@@ -353,7 +360,7 @@ a.product__text {
 .product--no-media .product__title,
 .product--no-media .product__text,
 .product--no-media noscript .product-form__input,
-.product--no-media .product__tax  {
+.product--no-media .product__tax {
   text-align: center;
 }
 
@@ -472,7 +479,8 @@ a.product__text {
     display: none;
   }
 
-  .product-media-modal__content > .product__media-item--variant.product__media-item--variant {
+  .product-media-modal__content
+    > .product__media-item--variant.product__media-item--variant {
     display: none;
   }
 
@@ -577,7 +585,7 @@ a.product__text {
 }
 
 .product__media-toggle::after {
-  content: '';
+  content: "";
   cursor: pointer;
   display: block;
   margin: 0;
@@ -603,13 +611,15 @@ a.product__text {
 .product__media-toggle:focus-visible:after {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 .product__media-toggle.focused::after {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
   outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 .product-media-modal {
@@ -666,8 +676,12 @@ a.product__text {
 }
 
 @media screen and (max-width: 749px) {
-  .product--thumbnail .is-active > .product__modal-opener:not(.product__modal-opener--image),
-  .product--thumbnail_slider .is-active > .product__modal-opener:not(.product__modal-opener--image) {
+  .product--thumbnail
+    .is-active
+    > .product__modal-opener:not(.product__modal-opener--image),
+  .product--thumbnail_slider
+    .is-active
+    > .product__modal-opener:not(.product__modal-opener--image) {
     display: none;
   }
 
@@ -678,10 +692,10 @@ a.product__text {
   }
 }
 
-.product__media-list .deferred-media,
+/* .product__media-list .deferred-media,
 .product__media-list .product__modal-opener {
   border: 0.1rem solid rgba(var(--color-foreground), 0.04);
-}
+} */
 
 .product-media-modal__content > * {
   display: block;
@@ -976,7 +990,9 @@ a.product__text {
 }
 
 @media screen and (min-width: 900px) {
-  .product--small .thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
+  .product--small
+    .thumbnail-list.slider--tablet-up
+    .thumbnail-list__item.slider__slide {
     width: calc(25% - 0.8rem);
   }
 
@@ -996,7 +1012,7 @@ a.product__text {
   color: rgb(var(--color-base-text));
   cursor: pointer;
   background-color: transparent;
-  border: 0.1rem solid rgba(var(--color-foreground),.04);
+  border: 0.1rem solid rgba(var(--color-foreground), 0.04);
 }
 
 .thumbnail:hover {
