@@ -1,0 +1,76 @@
+<div class="main-carousel"></div>
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script>
+  fetch("https://app.iloveugc.com/api/v1/feed/3")
+      .then(response => response.json())
+      .then(results => {
+        const feed = results.data;
+        if(feed.length) {
+          // initialize slider
+          let elem = document.querySelector('.main-carousel');
+          feed.forEach(item => {
+          let div = document.createElement('div');
+          let img = document.createElement('img')
+          div.classList.add('carousel-cell')
+            img.setAttribute('src', item.thumbnail_url)
+            img.classList.add('xh-[498px]', 'xw-[290px]', 'xobject-cover', 'xobject-center')
+            div.appendChild(img)
+            elem.appendChild(div)
+          });
+          let flkty = new Flickity( elem, {
+            groupCells: 1,
+            imagesLoaded: true,
+            pageDots: false
+          });
+        }
+      })
+      .catch(e => console.log(e))
+</script>
+
+<style>
+      .carousel-cell {
+        margin-right: 30px;
+        margin-bottom: 20px;
+        border: 2px solid black;
+        box-shadow: black 3px 3px 0 0;
+        border-radius: 22px;
+        overflow: hidden;
+      }
+
+      .flickity-button {
+      background: #333;
+    }
+    .flickity-button:hover {
+      background-color: rgba(var(--color-button), var(--alpha-button-background));
+    }
+
+    .flickity-button:focus {
+    outline: none;
+    box-shadow: black 3px 3px 0 0;
+  }
+
+  .flickity-prev-next-button {
+      /* position: relative; */
+      top: calc(100% + 30px);
+      cursor: pointer;
+      padding: 16px 24px;
+      border: 2px solid black;
+      box-shadow: black 3px 3px 0 0;
+      border-radius: 48px;
+      background-color: rgba(var(--color-button), var(--alpha-button-background));
+      margin-top: 50px;
+      margin-left: auto;
+    }
+    /* icon color */
+    .flickity-button-icon {
+      fill: black;
+    }
+    /* position outside */
+    .flickity-prev-next-button.previous {
+    right: 80px;
+    }
+  .flickity-prev-next-button.next {
+    right: 20px;
+    }
+</style>
