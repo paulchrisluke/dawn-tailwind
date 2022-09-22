@@ -159,6 +159,16 @@
     "1660760840b614851d": {
       "type": "social-lookbook-section",
       "settings": {
+        "background": "#3FA757",
+        "scallop_border_top": true,
+        "scallop_border_bottom": true,
+        "position": 0,
+        "title": "Our Social Lookbook",
+        "caption": "Get Featured",
+        "num_of_images": 5,
+        "icon": true,
+        "button_label": "Load more",
+        "link": "shopify:\/\/pages\/our-social-lookbook-gumballpoodle"
       }
     },
     "16607588504ef03feb": {
@@ -181,15 +191,6 @@
       "type": "custom-liquid",
       "disabled": true,
       "settings": {
-        "bg_color": "#31af46",
-        "text_color": "#ffffff",
-        "scallop_border_top": true,
-        "scallop_border_bottom": true,
-        "position": 0,
-        "title": "Our Social Lookbook",
-        "text_border": true,
-        "caption": "Get Featured",
-        "button_label": "Load more"
       }
     },
     "166075891041478f50": {
