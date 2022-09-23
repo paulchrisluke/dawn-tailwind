@@ -146,12 +146,15 @@
           >
             {{ 'products.product.quantity.label' | t }}
           </label>
-          <button
-            type="button"
-            class="button !xbg-white !xp-0"
-          >
-            Add to cart
-          </button>
+          <!--
+            <button
+              type="button"
+              class="button !xbg-white !xp-0"
+            >
+              Add to cart
+            </button>
+          -->
+
           <div class="cart-item__price-wrapper total-price_hidden">
             {%- if featured_item.original_line_price != featured_item.final_line_price -%}
               <dl class="cart-item__discounted-prices">
