@@ -1,0 +1,17 @@
+<nav class="xsticky xbottom-0 xbg-pink-500">
+  <div class="xflex xitems-center xjustify-between xmax-w-[600px] xmx-auto xtext-white xpx-16 xpy-6">
+    <div>
+      <a href="{{ routes.root_url }}" class="xh-4 xw-4">
+        {%- render 'icon-home' -%}
+      </a>
+    </div>
+    <div>
+      {% render 'icon-feed' %}
+    </div>
+    <div>
+      <a href="{{ routes.cart_url }}">{% render 'icon-cart2' %}</a>
+    </div>
+    <div>{% render 'icon-home' %}</div>
+    <div>{% render 'icon-home' %}</div>
+  </div>
+</nav>

@@ -32,8 +32,10 @@
   <div class="grid__item medium-up--three-quarters medium-up--push-one-eighth">
 -->
 
-<div class="social-lookbook-section xpt-20">
-  <h2>
+<!-- Sticky Nav -->
+
+<div class="social-lookbook-section !xoverflow-y-auto sm:xoverflow-y-visible">
+  <h2 class="xhidden sm:xblock">
     <a href="/pages/our-social-lookbook-gumballpoodle">
       {{- page.title -}}
     </a>
@@ -45,14 +47,40 @@
 
   <div class="social-lookbook-galley-wrapper">
     <div class="social-lookbook-galley">
-      <div class="image-block-wrapper">
-        <img class="content-main">
-        <video
-          autoplay="autoplay"
-          loop="loop"
-          muted="muted"
-          class="content-main"
-        ></video>
+      <div class="social-lookbook-media-container xflex xflex-col xmax-w-[600px] xpy-12">
+        <!-- media -->
+        <div class="image-block-wrapper">
+          <img class="content-main">
+          <video
+            autoplay="autoplay"
+            loop="loop"
+            muted="muted"
+            class="content-main xaspect-square"
+          ></video>
+          <div class="product-info-container xabsolute xbottom-0 xinset-x-0">
+            <div class="product-info-wrapper xpx-10 xpb-8 xflex xitems-center xjustify-between xspace-x-4">
+              <div class="product-text-wrapper xw-fit xpy-1 xpx-4 xrounded-2xl">
+                <p class="product-title"></p>
+                <p class="product-price"></p>
+              </div>
+              <img class="product-image xw-20 xmb-1 xanimate-spin-slow">
+            </div>
+          </div>
+        </div>
+        <!-- hashtags -->
+        <div
+          class="hashtags xmy-4 xtext-sm sm:xtext-[14px] sm:xleading-9"
+        ></div>
+        <!-- user details -->
+        <div>
+          <a target="_blank" class="user-profile-link xflex xspace-x-5 xw-fit">
+            <img class="user-image xrounded-full xw-20 xh-20">
+            <div>
+              <p class="user-name"></p>
+              <p class="user-handle"></p>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -215,6 +243,8 @@
     </div>
   </div>
 </div>
+
+{% render 'social-lookbook-nav' %}
 
 {{ 'social-lookbook-functions.js' | asset_url | script_tag }}
 {{ 'social-lookbook-style.css' | asset_url | stylesheet_tag }}

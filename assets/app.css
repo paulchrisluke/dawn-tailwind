@@ -559,11 +559,21 @@ video {
   position: relative;
 }
 
+.xsticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .xinset-0 {
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
+}
+
+.xinset-x-0 {
+  left: 0px;
+  right: 0px;
 }
 
 .xtop-0 {
@@ -588,6 +598,14 @@ video {
 
 .xbottom-full {
   bottom: 100%;
+}
+
+.xtop-5 {
+  top: 1.25rem;
+}
+
+.xright-5 {
+  right: 1.25rem;
 }
 
 .xbottom-1\/4 {
@@ -713,6 +731,14 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.xmb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.xml-2 {
+  margin-left: 0.5rem;
+}
+
 .xblock {
   display: block;
 }
@@ -781,12 +807,32 @@ video {
   height: 18rem;
 }
 
+.xh-4 {
+  height: 1rem;
+}
+
+.xh-6 {
+  height: 1.5rem;
+}
+
+.xh-10 {
+  height: 2.5rem;
+}
+
+.xh-16 {
+  height: 4rem;
+}
+
 .xh-\[498px\] {
   height: 498px;
 }
 
 .xh-\[2px\] {
   height: 2px;
+}
+
+.xh-12 {
+  height: 3rem;
 }
 
 .xw-full {
@@ -825,6 +871,28 @@ video {
   width: auto;
 }
 
+.xw-4 {
+  width: 1rem;
+}
+
+.xw-6 {
+  width: 1.5rem;
+}
+
+.xw-10 {
+  width: 2.5rem;
+}
+
+.xw-16 {
+  width: 4rem;
+}
+
+.xw-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 .xw-1\/2 {
   width: 50%;
 }
@@ -833,12 +901,12 @@ video {
   width: 290px;
 }
 
-.xmin-w-full {
-  min-width: 100%;
+.xw-12 {
+  width: 3rem;
 }
 
-.xmin-w-\[200px\] {
-  min-width: 200px;
+.xmin-w-full {
+  min-width: 100%;
 }
 
 .xmax-w-0 {
@@ -867,6 +935,14 @@ video {
 
 .xmax-w-\[350px\] {
   max-width: 350px;
+}
+
+.xmax-w-\[1000px\] {
+  max-width: 1000px;
+}
+
+.xmax-w-\[600px\] {
+  max-width: 600px;
 }
 
 .xflex-none {
@@ -909,6 +985,34 @@ video {
 .xrotate-180 {
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@-webkit-keyframes xspin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes xspin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.xanimate-spin {
+  -webkit-animation: xspin 1s linear infinite;
+          animation: xspin 1s linear infinite;
+}
+
+@keyframes xspin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.xanimate-spin-slow {
+  -webkit-animation: xspin 3s linear infinite;
+          animation: xspin 3s linear infinite;
 }
 
 .xgrid-flow-row {
@@ -1029,6 +1133,12 @@ video {
   margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.xspace-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
 .xdivide-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
@@ -1072,8 +1182,16 @@ video {
   overflow-x: auto;
 }
 
+.\!xoverflow-y-auto {
+  overflow-y: auto !important;
+}
+
 .xoverflow-x-hidden {
   overflow-x: hidden;
+}
+
+.xoverflow-y-visible {
+  overflow-y: visible;
 }
 
 .xwhitespace-nowrap {
@@ -1098,6 +1216,10 @@ video {
 
 .xrounded-full {
   border-radius: 9999px;
+}
+
+.xrounded-2xl {
+  border-radius: 1rem;
 }
 
 .xrounded-\[24px\] {
@@ -1177,6 +1299,16 @@ video {
 .xbg-pink-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(219 39 119 / var(--tw-bg-opacity));
+}
+
+.xbg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.xbg-pink-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
 }
 
 .xbg-\[\#FFF7EA\] {
@@ -1361,6 +1493,21 @@ video {
   padding-bottom: 2rem;
 }
 
+.xpx-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.xpy-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.xpx-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .xpt-20 {
   padding-top: 5rem;
 }
@@ -1391,6 +1538,18 @@ video {
 
 .\!xpb-14 {
   padding-bottom: 3.5rem !important;
+}
+
+.xpt-6 {
+  padding-top: 1.5rem;
+}
+
+.xpb-4 {
+  padding-bottom: 1rem;
+}
+
+.xpb-8 {
+  padding-bottom: 2rem;
 }
 
 .xtext-center {
@@ -1431,13 +1590,13 @@ video {
   line-height: 1.5rem;
 }
 
-.xtext-\[14px\] {
-  font-size: 14px;
-}
-
 .xtext-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.xtext-\[14px\] {
+  font-size: 14px;
 }
 
 .xfont-semibold {
@@ -1478,6 +1637,18 @@ video {
 
 .\!xleading-6 {
   line-height: 1.5rem !important;
+}
+
+.xleading-5 {
+  line-height: 1.25rem;
+}
+
+.xleading-7 {
+  line-height: 1.75rem;
+}
+
+.xleading-9 {
+  line-height: 2.25rem;
 }
 
 .xtracking-tight {
@@ -1563,16 +1734,21 @@ video {
     margin-bottom: 5rem;
   }
 
+  .sm\:xmy-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
   .sm\:xmb-64 {
     margin-bottom: 16rem;
   }
 
-  .sm\:xmb-0 {
-    margin-bottom: 0px;
+  .sm\:xblock {
+    display: block;
   }
 
-  .sm\:xaspect-auto {
-    aspect-ratio: auto;
+  .sm\:xw-80 {
+    width: 20rem;
   }
 
   .sm\:xmax-w-none {
@@ -1583,28 +1759,12 @@ video {
     flex: 1 1 0%;
   }
 
-  .sm\:xgrid-flow-row {
-    grid-auto-flow: row;
-  }
-
   .sm\:xgrid-flow-col {
     grid-auto-flow: column;
   }
 
-  .sm\:xgrid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .sm\:xgrid-cols-none {
     grid-template-columns: none;
-  }
-
-  .sm\:xflex-row {
-    flex-direction: row;
-  }
-
-  .sm\:xflex-nowrap {
-    flex-wrap: nowrap;
   }
 
   .sm\:xjustify-center {
@@ -1615,10 +1775,8 @@ video {
     gap: 6rem;
   }
 
-  .sm\:xspace-x-10 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(2.5rem * var(--tw-space-x-reverse));
-    margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+  .sm\:xoverflow-y-visible {
+    overflow-y: visible;
   }
 
   .sm\:xp-5 {
@@ -1635,6 +1793,11 @@ video {
     padding-bottom: 13rem;
   }
 
+  .sm\:xpy-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
   .sm\:xtext-\[16px\] {
     font-size: 16px;
   }
@@ -1647,6 +1810,22 @@ video {
   .sm\:xtext-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .sm\:xtext-\[14px\] {
+    font-size: 14px;
+  }
+
+  .sm\:xleading-5 {
+    line-height: 1.25rem;
+  }
+
+  .sm\:xleading-7 {
+    line-height: 1.75rem;
+  }
+
+  .sm\:xleading-9 {
+    line-height: 2.25rem;
   }
 }
 

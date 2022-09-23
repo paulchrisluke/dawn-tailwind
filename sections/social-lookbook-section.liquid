@@ -56,6 +56,7 @@
           let gallery = document.getElementsByTagName('lookbook-gallery')[0];
           feed.splice(0, gallery?.dataset?.amount || 5).forEach(item => {
             gallery.appendChild(createImageCard(item))
+            // gallery.innerHTML += createImageCard(item)
           });
         }
       })
@@ -63,17 +64,10 @@
 
       function createImageCard(item) {
         let div = document.createElement('div')
-          let img = document.createElement('img')
-          let divChild = document.createElement('div')
-          div.classList.add('xrelative', 'xw-full', 'xmax-w-[350px]', 'sm:xflex-1', 'xoverflow-hidden', 'xrounded-3xl', 'xbg-black');
-          div.style.cssText = 'border:2px solid black;box-shadow:black 3px 3px 0 0;'
-          img.setAttribute('src', item.thumbnail_url)
-          img.classList.add('xw-full')
-          divChild.classList.add('xabsolute', 'xtop-0', 'xright-0', 'xp-5')
-          divChild.innerHTML = `<span class="xbg-pink-600 xpx-4 xpy-1 xrounded-full xtext-semibold xtext-xl sm:xtext-base">${item.name}</span>`
-          div.appendChild(img)
-          div.appendChild(divChild)
-          return div;
+        div.classList.add('xrelative', 'xw-full', 'xmax-w-[350px]', 'sm:xflex-1', 'xoverflow-hidden', 'xrounded-3xl', 'xbg-black');
+        div.style.cssText = 'border:2px solid black;box-shadow:black 3px 3px 0 0;'
+        div.innerHTML = `<a href="${item.products?.[0]?.product_url || ''}"><img src="${item.thumbnail_url}" alt="" class="xw-full xh-full xobject-cover xobject-center"></a><span class="xabsolute xtop-5 xright-5 xbg-pink-600 xpx-4 xpy-1 xrounded-full xtext-semibold xtext-xl sm:xtext-base">${item.name}</span>`;
+        return div;
       }
 </script>
 
