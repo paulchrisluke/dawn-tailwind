@@ -2,7 +2,7 @@ let $slb_popup = document.querySelector(".lookbook-popup-wrapper");
 let $slb_popup_slide = $slb_popup.querySelector(".slide");
 
 let slb_gallery_item_sample = document.querySelector(
-  ".social-lookbook-galley .image-block-wrapper"
+  ".social-lookbook-media-container"
 );
 let $slb_gallery_item = slb_gallery_item_sample.cloneNode(true);
 slb_gallery_item_sample.parentNode.removeChild(slb_gallery_item_sample);
@@ -185,7 +185,7 @@ function ugc_create_gallery_item(records) {
   records.forEach(function (item, index) {
     let $new_gallery_item = $slb_gallery_item.cloneNode(true);
 
-    //Function, that responsilbe for open the popup with the needed slide
+    //Function, that responsilbe for open the popup with the needed slide =========================================================================================================================
     $new_gallery_item.addEventListener("click", function () {
       //Get needed slide index
       slb_active_slide_index = Array.prototype.indexOf.call(
@@ -248,7 +248,9 @@ function ugc_create_gallery_item(records) {
         .map(({ value }) => value);
     }
 
-    $new_gallery_item.style.background = slb_gallery_colors[index % 5];
+    let random_bg_color = slb_gallery_colors[index % 5];
+    $new_gallery_item.querySelector(".image-block-wrapper").style.background =
+      random_bg_color;
 
     let element_to_delete;
     if (item["type"] !== "image") {
@@ -266,6 +268,50 @@ function ugc_create_gallery_item(records) {
     element_to_delete = $new_gallery_item.querySelector(element_to_delete);
     element_to_delete.parentNode.removeChild(element_to_delete);
 
+    // Add products info
+    if (!item.products?.length) {
+      $new_gallery_item
+        .querySelector(".product-info-container")
+        .classList.add("hidden");
+    } else {
+      let product = item.products[0];
+      let productTextWrapper = $new_gallery_item.querySelector(
+        ".product-text-wrapper"
+      );
+      let productImage = $new_gallery_item.querySelector(".product-image");
+      productImage.setAttribute("src", product.product_image);
+      productTextWrapper.style.background = random_bg_color;
+      $new_gallery_item.querySelector(".product-title").innerText =
+        product.product_name;
+      $new_gallery_item.querySelector(".product-price").innerText =
+        "$" + product.product_price;
+    }
+
+    // Adds hashtags
+    if (!item.hashtags?.length) {
+      $new_gallery_item.querySelector(".hashtags").classList.add("hidden");
+    } else {
+      $new_gallery_item.querySelector(".hashtags").innerText = item?.hashtags
+        .map((tag) => "#" + tag.label)
+        .join(" ")
+        .replace(/,/g, "");
+    }
+
+    // user details
+    if (!item.avatar.thumbnail_url) {
+      $new_gallery_item.querySelector(".user-image").classList.add("hidden");
+    } else {
+      $new_gallery_item
+        .querySelector(".user-image")
+        .setAttribute("src", item.avatar.thumbnail_url);
+    }
+    $new_gallery_item
+      .querySelector(".user-profile-link")
+      .setAttribute("href", item.url);
+    $new_gallery_item.querySelector(".user-name").innerText = item.name;
+    $new_gallery_item.querySelector(".user-handle").innerText = item.username;
+
+    // Adds new item to DOM
     document
       .querySelector(".social-lookbook-galley")
       .appendChild($new_gallery_item);
@@ -298,13 +344,18 @@ fetch("https://app.iloveugc.com/api/v1/feed/3")
     data.forEach(function (item, index) {
       let $new_slide = $slb_popup_slide.cloneNode(true);
       $new_slide.setAttribute("data-src", item["content_url"]);
-      $new_slide
-        .querySelector(".buy-button")
-        .setAttribute(
-          "href",
-          item["content_id"] +
-            "?utm_source=iloveugc&utm_medium=buy-button&utm_campaign=home-widget"
-        );
+
+      if (item.products?.[0]?.product_url) {
+        $new_slide
+          .querySelector(".buy-button")
+          .setAttribute(
+            "href",
+            item.products?.[0]?.product_url +
+              "?utm_source=iloveugc&utm_medium=buy-button&utm_campaign=home-widget"
+          );
+      } else {
+        $new_slide.querySelector(".buy-button").classList.add("hidden");
+      }
 
       if (item["type"] !== "image") {
         $new_slide.classList.add("with-video");
@@ -332,7 +383,7 @@ fetch("https://app.iloveugc.com/api/v1/feed/3")
         );
       $new_slide
         .querySelector(".user-image")
-        .setAttribute("src", item["instagram_user_picture"]);
+        .setAttribute("src", item["avatar"]?.thumbnail_url);
       $new_slide.querySelector(".user-name").innerHTML = item["username"];
 
       if (item["description"]) {
@@ -341,13 +392,20 @@ fetch("https://app.iloveugc.com/api/v1/feed/3")
       }
 
       //Get data about connected products
-      $new_slide.querySelector(".product-price").innerHTML =
-        "$ " + item["product-price"];
+      let product = item?.products?.[0];
+      let price = $new_slide.querySelector(".product-price");
+      product?.product_price
+        ? (price.innerHTML = "$ " + product?.product_price)
+        : (price.innerHTML = "");
       $new_slide.querySelector(".product-name").innerHTML =
-        item["product-name"];
-      $new_slide
-        .querySelector(".product-image")
-        .setAttribute("data-src", item["product-image"]);
+        product?.product_name || "";
+
+      let productImage = $new_slide.querySelector(".product-image");
+      if (product?.product_image) {
+        productImage.setAttribute("data-src", product?.product_image);
+      } else {
+        productImage.classList.add("hidden");
+      }
 
       slb_approved_items++;
     });

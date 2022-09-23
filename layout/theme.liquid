@@ -167,18 +167,23 @@
       {{ 'accessibility.skip_to_text' | t }}
     </a>
 
-    {% section 'announcement-bar' %}
-    {% section 'header' %}
+    {% unless page.url contains 'lookbook' %}
+      {% section 'announcement-bar' %}
+      {% section 'header' %}
+    {% endunless %}
+
     <main
       id="MainContent"
-      class="content-for-layout focus-none xoverflow-x-hidden"
+      class="content-for-layout focus-none"
       role="main"
       tabindex="-1"
     >
       {{ content_for_layout }}
     </main>
 
-    {% section 'footer' %}
+    {% unless page.url contains 'lookbook' %}
+      {% section 'footer' %}
+    {% endunless %}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">
