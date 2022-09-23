@@ -36,17 +36,17 @@
     </a>
 
     <!-- Have an account? -->
-    <!--
+    {%- comment -%}
       {%- if shop.customer_accounts_enabled -%}
-        <h4 class="cart__login-title">{{ 'sections.cart.login.title' | t }}</h4>
-        <p class="cart__login-paragraph">
-          {{
-            'sections.cart.login.paragraph_html'
-            | t: link: routes.account_login_url
-          }}
-        </p>
-      {%- endif -%}
-    -->
+          <!-- <h4 class="cart__login-title">{{ 'sections.cart.login.title' | t }}</h4>
+          <p class="cart__login-paragraph">
+            {{
+              'sections.cart.login.paragraph_html'
+              | t: link: routes.account_login_url
+            }}
+          </p> -->
+        {%- endif -%}
+    {%- endcomment -%}
   </div>
 
   <form
@@ -392,7 +392,9 @@
             </tbody>
           </table>
         {%- endif -%}
-        {% render 'main-cart-recommended' %}
+        {%- comment -%}
+          {% render 'main-cart-recommended' %}
+        {%- endcomment -%}
       </div>
       <div class="xtext-center xmt-14 xborder-black xborder-t-2 xmx-auto xpx-2">
         <div class="xpy-6">
