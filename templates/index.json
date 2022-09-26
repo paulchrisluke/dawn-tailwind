@@ -159,7 +159,7 @@
     "1660760840b614851d": {
       "type": "social-lookbook-section",
       "settings": {
-        "background": "#3FA757",
+        "background": "#3fa757",
         "scallop_border_top": true,
         "scallop_border_bottom": true,
         "position": 0,
@@ -503,7 +503,7 @@
         "image_width": "full",
         "image_ratio": "adapt",
         "column_alignment": "left",
-        "color_scheme": "background-1",
+        "color_scheme": "background-2",
         "background_style": "none",
         "button_label": "",
         "button_link": "",
