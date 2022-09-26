@@ -1,6 +1,6 @@
 <div
   style="background-color: {{ section.settings.background }}"
-  class="xrelative xpy-32 sm:xpy-52 xmy-10 sm:xmy-20 xpx-6"
+  class="xrelative xoverflow-x-hidden xpy-32 sm:xpy-52 xmy-10 sm:xmy-20 xpx-6"
 >
   <div class="page-width">
     <h2 class="white-text-black-stroke h1 uppercase">
@@ -49,6 +49,7 @@
     }
   };
 
+  // add query per_page=5 once we have an endpoint for filtering the approved items
   fetch("https://app.iloveugc.com/api/v1/feed/3?page=3")
       .then(response => response.json())
       .then(results => {
@@ -58,7 +59,7 @@
           customElements.define('lookbook-gallery', LookbookGallery)
           let gallery = document.getElementsByTagName('lookbook-gallery')[0];
 
-          feed.sort((a, b) => b.id - a.id).splice(0, gallery?.dataset?.amount || 5).forEach(item => {
+          feed.sort((a, b) => b.id - a.id).filter(item => item.is_active).splice(0, gallery?.dataset?.amount || 5).forEach(item => {
             gallery.appendChild(createImageCard(item))
           });
         }
@@ -66,22 +67,22 @@
       .catch(e => console.log(e))
 
       function createImageCard(item) {
-        let wrapper;
+        let new_gallery_item;
         if(item.products?.length && item.products?.[0]?.product_url) {
-          wrapper = document.createElement('a')
-          wrapper.setAttribute('href', item.products?.[0]?.product_url);
+          new_gallery_item = document.createElement('a')
+          new_gallery_item.setAttribute('href', item.products?.[0]?.product_url);
         } else {
-          wrapper = document.createElement('div');
+          new_gallery_item = document.createElement('div');
         }
-        wrapper.classList.add('xrelative', 'xw-full', 'xmax-w-[350px]', 'sm:xflex-1', 'xoverflow-hidden', 'xrounded-3xl', 'xbg-black');
-        wrapper.style.cssText = 'border:2px solid black;box-shadow:black 3px 3px 0 0;';
+        new_gallery_item.classList.add('xrelative', 'xw-full', 'xmax-w-[350px]', 'sm:xflex-1', 'xoverflow-hidden', 'xrounded-3xl', 'xbg-black');
+        new_gallery_item.style.cssText = 'border:2px solid black;box-shadow:black 3px 3px 0 0;';
 
         if(item.type === 'image') {
-          wrapper.innerHTML = `<img src="${item.thumbnail_url}" alt="" class="xw-full xh-full xobject-cover xobject-center">`;
+          new_gallery_item.innerHTML = `<img src="${item.thumbnail_url}" alt="" class="xw-full xh-full xobject-cover xobject-center">`;
         } else {
-          wrapper.innerHTML = `<video src="${item.content_url}" alt="" class="xw-full xh-full xobject-cover xobject-center" autoplay muted loop playsinline></video>`;
+          new_gallery_item.innerHTML = `<video src="${item.content_url}" alt="" class="xw-full xh-full xobject-cover xobject-center" autoplay muted loop playsinline></video>`;
         }
-        return wrapper;
+        return new_gallery_item;
       }
 </script>
 

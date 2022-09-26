@@ -496,23 +496,25 @@
           if cart == empty
             render 'icon-cart-empty'
           else
-            render 'icon-cart'
+            render 'icon-cart-empty'
           endif
         -%}
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
           <div class="cart-count-bubble">
+            {%- comment -%}
             {%- if cart.item_count < 100 -%}
               <span aria-hidden="true">{{ cart.item_count }}</span>
             {%- endif -%}
+            {%- endcomment -%}
             <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
           </div>
         {%- endif -%}
       </a>
+      {% if section.settings.header_image %}
+        <img src="{{ section.settings.header_image | img_url }}" loading="lazy" width="{{ image.width }}" height="{{ image.height }}" style="width:{{ section.settings.header_image_width }}px" alt="{{ section.settings.header_image.alt }}">
+      {% endif %}
     </div>
-    {% if section.settings.header_image %}
-      <img src="{{ section.settings.header_image | img_url }}" style="width:{{ section.settings.header_image_width }}px" alt="{{ section.settings.header_image.alt }}">
-    {% endif %}
     </div>
   </header>
 </{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %}>
