@@ -1226,7 +1226,7 @@ deferred-media {
   appearance: none;
 }
 
-.button:focus-visible {
+/* .button:focus-visible {
   box-shadow: 0 0 0 0.1rem rgba(var(--color-button), var(--alpha-button-border)),
     0 0 0 0.3rem rgb(var(--color-background)),
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
@@ -1240,7 +1240,7 @@ deferred-media {
 
 .button:focus:not(:focus-visible) {
   box-shadow: 0 0 0 0.1rem rgba(var(--color-button), var(--alpha-button-border));
-}
+} */
 
 .button::selection,
 .shopify-challenge__button::selection,

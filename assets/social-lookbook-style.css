@@ -325,6 +325,26 @@ body.active-popup {
 .social-lookbook-media-container {
 }
 
+.lookbook-button {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  font: inherit;
+  font-weight: 600;
+  height: 50px;
+  padding: 0 20px;
+  text-decoration: none;
+  border: 2px solid black;
+  box-shadow: black 3px 3px 0 0;
+  border-radius: 48px;
+  background-color: rgba(var(--color-button), var(--alpha-button-background));
+  color: rgb(var(--color-button-text));
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .lookbook-popup .image-block-wrapper:before {
   content: "";
   position: absolute;
