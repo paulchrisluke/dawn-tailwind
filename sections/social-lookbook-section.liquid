@@ -32,18 +32,18 @@
     </div>
 
     <!-- Swiper Lookbook Gallery Slider -->
-    <div class="swiper xh-auto">
+    <div class="swiper xh-auto xpr-[3px]">
       <div class="swiper-wrapper"></div>
       <!-- navigation buttons -->
       <div class="page-width xmx-auto">
-        <div class="xflex xitems-center xspace-y-4 xjustify-between xmt-4 sm:xmt-12 xmb-3 sm:xmb-8">
+        <div class="xflex xflex-col-reverse xs:xflex-row xs:xitems-center xjustify-between xmt-6 sm:xmt-12 xmb-3 sm:xmb-8">
           <a
             href="{{ section.settings.link }}"
-            class="lookbook-button"
+            class="lookbook-button xmt-4"
           >
             {{- section.settings.button_label -}}
           </a>
-          <div class="xspace-x-2">
+          <div class="xspace-x-2 xmt-4 xself-center xs:xplace-self-auto">
             <div class="swiper-prev lookbook-button">
               {% render 'icon-caret-left' %}
             </div>

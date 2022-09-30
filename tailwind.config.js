@@ -8,6 +8,7 @@ module.exports = {
       },
       screens: {
         sm: "750px",
+        xs: "310px",
       },
       animation: {
         "spin-slow": "spin 3s linear infinite",

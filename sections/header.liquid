@@ -511,9 +511,9 @@
           </div>
         {%- endif -%}
       </a>
-      {% if section.settings.header_image %}
-        <img src="{{ section.settings.header_image | img_url }}" loading="lazy" width="{{ image.width }}" height="{{ image.height }}" style="width:{{ section.settings.header_image_width }}px" alt="{{ section.settings.header_image.alt }}">
-      {% endif %}
+      <div class="header__icon__made-in-usa">
+        {% render 'made-in-usa' %}
+      </div>
     </div>
     </div>
   </header>
