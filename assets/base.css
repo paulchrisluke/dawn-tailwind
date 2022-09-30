@@ -1895,6 +1895,12 @@ input[type="checkbox"] {
   padding-bottom: 1rem;
 }
 
+@media screen and (max-width: 500px) {
+  .header__icon__made-in-usa {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 990px) {
   .header {
     padding-top: 2rem;
