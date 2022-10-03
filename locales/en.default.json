@@ -414,7 +414,11 @@
   "shopify": {
     "checkout": {
       "shipping": {
-        "estimated_delivery_date_range": "Estimated {{ minimum }}-{{ maximum }} business days"
+        "estimated_delivery_date_range": "Estimated {{ minimum }}-{{ maximum }} business days",
+        "estimated_delivery_date": {
+          "one": "Estimated {{ count }} business day",
+          "other": "Estimated {{ count }} business days"
+        }
       }
     }
   }
