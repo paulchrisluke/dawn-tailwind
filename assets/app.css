@@ -551,6 +551,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.xinvisible {
+  visibility: hidden;
+}
+
 .xabsolute {
   position: absolute;
 }
@@ -674,6 +678,11 @@ video {
 .xmy-\[5rem\] {
   margin-top: 5rem;
   margin-bottom: 5rem;
+}
+
+.xmy-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .xmt-20 {
@@ -1571,30 +1580,12 @@ video {
 }
 
 @media (min-width: 310px) {
-  .xs\:xmt-0 {
-    margin-top: 0px;
-  }
-
-  .xs\:xmt-8 {
-    margin-top: 2rem;
-  }
-
-  .xs\:xflex {
-    display: flex;
-  }
-
   .xs\:xflex-row {
     flex-direction: row;
   }
 
   .xs\:xitems-center {
     align-items: center;
-  }
-
-  .xs\:xspace-y-0 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(0px * var(--tw-space-y-reverse));
   }
 
   .xs\:xplace-self-auto {
